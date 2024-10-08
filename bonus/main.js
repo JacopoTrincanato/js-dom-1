@@ -20,13 +20,13 @@ lampButton.addEventListener("click", ()=>{
 //tu hai il tuo click del btn ... una volta cliccato devi vedere se la scritta è accendi ... se lo fai spegni mostrando un img e cambiando il testo se non lo è mostri un altra img e cambi con un altro testo
 
 lampButton.addEventListener("click", ()=>{
-    let btnText = "";
+    let btnText = lampButton;
     if(btnText === "Accendi") {
-        lampButton.replace("Accendi", "Spegni")
+        btnText.textContent("Spegni");
         yellowLamp.classList.add("d-block");
         whiteLamp.classList.add("d-none");
     }else{
-        lampButton.replace("Spegni", "Accendi")
+        btnText.textContent("Accendi");
         yellowLamp.classList.add("d-none");
         whiteLamp.classList.add("d-block");
     }
