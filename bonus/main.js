@@ -21,10 +21,10 @@ function onAndOff(string) {
     const myImg = document.images
     for (let i = 0; i < myImg.length; i++) {
         const element = myImg[i];
-        if(myImg === yellowLamp){
-            lampButton.addEventListener("click", ()=>{
-                replaceButtonText('Accendi', 'Spegni')
-            })
+        if(element === yellowLamp){
+            lampButton.onclick = ()=>{
+                lampButton.replaceButtonText('Accendi', 'Spegni')
+            }
         }
     }
     return string
