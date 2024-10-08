@@ -17,20 +17,24 @@ lampButton.addEventListener("click", ()=>{
 })
 
 //4. creo una funzione che mi permetta di ripetere l'azione di accensione e spegnimento
-function onAndOff(string) {
-    const myImg = document.images
-    for (let i = 0; i < myImg.length; i++) {
-        const element = myImg[i];
-        if(element === yellowLamp){
-            lampButton.onclick = ()=>{
-                lampButton.replaceButtonText('Accendi', 'Spegni')
-            }
-        }
-    }
-    return string
-}
+//tu hai il tuo click del btn ... una volta cliccato devi vedere se la scritta è accendi ... se lo fai spegni mostrando un img e cambiando il testo se non lo è mostri un altra img e cambi con un altro testo
 
-console.log(onAndOff(lampButton));
+lampButton.addEventListener("click", ()=>{
+    let btnText = "";
+    if(btnText === "Accendi") {
+        lampButton.replace("Accendi", "Spegni")
+        yellowLamp.classList.add("d-block");
+        whiteLamp.classList.add("d-none");
+    }else{
+        lampButton.replace("Spegni", "Accendi")
+        yellowLamp.classList.add("d-none");
+        whiteLamp.classList.add("d-block");
+    }
+    
+})
+    
+
+console.log(lampButton);
 
 
 //cambiare il testo del bottone al click
