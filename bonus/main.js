@@ -9,26 +9,17 @@ const yellowLamp = document.querySelector(".on-lightbulb");
 yellowLamp.classList.add("d-none");
 console.log(yellowLamp.classList);
 
-//3. creo una funzione che mi permetta di visualizzare la lampadina accesa quando clicco il bottone
-lampButton.addEventListener("click", ()=>{
-    
-    yellowLamp.classList.add("d-block");
-    whiteLamp.classList.add("d-none");
-})
-
-//4. creo una funzione che mi permetta di ripetere l'azione di accensione e spegnimento
-//tu hai il tuo click del btn ... una volta cliccato devi vedere se la scritta è accendi ... se lo fai spegni mostrando un img e cambiando il testo se non lo è mostri un altra img e cambi con un altro testo
+//3. creo una funzione che mi permetta di ripetere l'azione di accensione e spegnimento
 
 lampButton.addEventListener("click", ()=>{
-    let btnText = lampButton;
-    if(btnText === "Accendi") {
-        btnText.textContent("Spegni");
+    if(lampButton.textContent === "Accendi") {
+        lampButton.textContent = "Spegni";
         yellowLamp.classList.add("d-block");
         whiteLamp.classList.add("d-none");
     }else{
-        btnText.textContent("Accendi");
-        yellowLamp.classList.add("d-none");
-        whiteLamp.classList.add("d-block");
+        lampButton.textContent = "Accendi";
+        yellowLamp.classList.remove("d-block");
+        whiteLamp.classList.remove("d-none");
     }
     
 })
